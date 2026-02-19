@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix Logo">
+            </div>
+            <div class="nav-right">
+                <div class="nav-menu">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">TV Shows</a>
+                    <a href="#" class="nav-link">Movies</a>
+                    <a href="#" class="nav-link">New & Popular</a>
+                    <a href="#" class="nav-link">My List</a>
+                </div>
+                <div class="user-menu">
+                    <div class="user-avatar" id="userAvatar" style="width: 32px; height: 32px; background: #e50914; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; cursor: pointer;">U</div>
+                    <div class="user-dropdown" id="userDropdown" style="display: none; position: absolute; top: 100%; right: 0; background: #141414; border-radius: 4px; min-width: 200px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000;">
+                        <div style="padding: 12px 16px; border-bottom: 1px solid #333;">
+                            <div id="userName" style="font-weight: bold; margin-bottom: 4px;">User</div>
+                            <div id="userPlan" style="color: #8c8c8c; font-size: 14px;">Basic Plan</div>
+                        </div>
+                        <a href="#" id="accountLink" style="display: block; padding: 12px 16px; color: white; text-decoration: none; border-bottom: 1px solid #333;">Account</a>
+                        <a href="#" id="settingsLink" style="display: block; padding: 12px 16px; color: white; text-decoration: none; border-bottom: 1px solid #333;">Settings</a>
+                        <a href="#" id="logoutLink" style="display: block; padding: 12px 16px; color: white; text-decoration: none;">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-search">
+                <input type="text" placeholder="Search" class="search-input">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <section class="hero-carousel">
+        <div class="hero-container">
+            <div class="hero-slide active">
+                <div class="hero-background">
+                    <img src="https://dummyimage.com/1920x1080/ff6b6b/ffffff&text=Stranger+Things" alt="Hero Background">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Stranger Things</h1>
+                    <div class="hero-meta">
+                        <span class="match">98% Match</span>
+                        <span class="year">2016</span>
+                        <span class="rating">TV-14</span>
+                        <span class="seasons">4 Seasons</span>
+                    </div>
+                    <p class="hero-description">When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary"><span class="btn-icon">▶</span> Play</button>
+                        <button class="btn btn-secondary"><span class="btn-icon">ℹ</span> More Info</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-background">
+                    <img src="https://dummyimage.com/1920x1080/95e1d3/ffffff&text=Breaking+Bad" alt="Hero Background">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Breaking Bad</h1>
+                    <div class="hero-meta">
+                        <span class="match">99% Match</span>
+                        <span class="year">2008</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="seasons">5 Seasons</span>
+                    </div>
+                    <p class="hero-description">A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary"><span class="btn-icon">▶</span> Play</button>
+                        <button class="btn btn-secondary"><span class="btn-icon">ℹ</span> More Info</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-background">
+                    <img src="https://dummyimage.com/1920x1080/2d3436/ffffff&text=Dark+Knight" alt="Hero Background">
+                </div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">The Dark Knight</h1>
+                    <div class="hero-meta">
+                        <span class="match">97% Match</span>
+                        <span class="year">2008</span>
+                        <span class="rating">PG-13</span>
+                        <span class="duration">152 min</span>
+                    </div>
+                    <p class="hero-description">When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest tests.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary"><span class="btn-icon">▶</span> Play</button>
+                        <button class="btn btn-secondary"><span class="btn-icon">ℹ</span> More Info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="hero-nav hero-prev" onclick="changeHeroSlide(-1)">‹</button>
+        <button class="hero-nav hero-next" onclick="changeHeroSlide(1)">›</button>
+        <div class="hero-indicators">
+            <span class="indicator active" onclick="goToHeroSlide(0)"></span>
+            <span class="indicator" onclick="goToHeroSlide(1)"></span>
+            <span class="indicator" onclick="goToHeroSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Movie Categories -->
+    <main class="main-content">
+        <!-- Continue Watching -->
+        <section class="movie-category">
+            <h2 class="category-title">Continue Watching for Emen</h2>
+            <div class="movie-carousel" id="continue-watching">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending Now -->
+        <section class="movie-category">
+            <h2 class="category-title">Trending Now</h2>
+            <div class="movie-carousel" id="trending-now">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Releases -->
+        <section class="movie-category">
+            <h2 class="category-title">New Releases</h2>
+            <div class="movie-carousel" id="new-releases">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Movies -->
+        <section class="movie-category">
+            <h2 class="category-title">Action Movies</h2>
+            <div class="movie-carousel" id="action-movies">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comedy Movies -->
+        <section class="movie-category">
+            <h2 class="category-title">Comedy Movies</h2>
+            <div class="movie-carousel" id="comedy-movies">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horror Movies -->
+        <section class="movie-category">
+            <h2 class="category-title">Horror Movies</h2>
+            <div class="movie-carousel" id="horror-movies">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Romantic Movies -->
+        <section class="movie-category">
+            <h2 class="category-title">Romantic Movies</h2>
+            <div class="movie-carousel" id="romantic-movies">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentaries -->
+        <section class="movie-category">
+            <h2 class="category-title">Documentaries</h2>
+            <div class="movie-carousel" id="documentaries">
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <div class="movie-row">
+                        <!-- Movies will be loaded here -->
+                    </div>
+                    <button class="carousel-btn next-btn">›</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <script src="auth-check.js"></script>
+    <script src="api-service.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
